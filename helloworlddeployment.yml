@@ -1,0 +1,45 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: hello-world
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: hello-world
+  name: nginx-helloworldcontainer
+spec:
+  selector:
+    matchLabels:
+      app: app-helloworld
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: app-helloworld
+    spec:
+      containers:
+      - name: helloworldcontainer
+        image: rahulgupta1234/helloworldcontainer:1
+        ports:
+        - containerPort: 80
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: hello-world
+  name: helloworldservice
+spec:
+  ports:
+    - name: http
+      port: 80
+      protocol: TCP
+      targetPort: 80
+  type: NodePort
+  selector:
+    app: app-helloworld

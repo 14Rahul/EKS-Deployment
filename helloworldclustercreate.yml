@@ -1,0 +1,25 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: hello-world-eks
+  region: us-east-1
+
+iam:
+  serviceRoleARN: "arn:aws:iam::469325079722:role/eksrole"
+
+vpc:
+  subnets:
+    private:
+      us-east-1a: { id: subnet-069c15ad175a0b8d0 }
+      us-east-1b: { id: subnet-0ac938abd668d4da9 }
+
+nodeGroups:
+  - name: ng-1-workers
+    labels: { role: workers }
+    instanceType: t3.small
+    desiredCapacity: 3
+    privateNetworking: true
+    volumeSize: 20
+    ssh:
+      allow: true
