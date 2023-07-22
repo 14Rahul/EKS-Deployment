@@ -6,20 +6,25 @@ metadata:
   region: us-east-1
 
 iam:
-  serviceRoleARN: "arn:aws:iam::469325079722:role/eksrole"
+  serviceRoleARN: "arn:aws:iam::162053822661:role/eks-cluster-role"
 
 vpc:
   subnets:
     private:
-      us-east-1a: { id: subnet-069c15ad175a0b8d0 }
-      us-east-1b: { id: subnet-0ac938abd668d4da9 }
+      us-east-1a: { id: subnet-00ef81ba0de790295 }
+      us-east-1b: { id: subnet-0946e9c6577f61433 }
+
+addons:
+  - name: cluster-auto-scaler
+    wellKnownPolicies:
+      autoScaler: true
 
 nodeGroups:
   - name: ng-1-workers
     labels: { role: workers }
     instanceType: t3.small
+    minSize: 1
+    maxSize: 10
     desiredCapacity: 3
     privateNetworking: true
     volumeSize: 20
-    ssh:
-      allow: true
