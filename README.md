@@ -27,4 +27,5 @@
 
 ## Architecture
 
-![BBBBB](https://github.com/14Rahul/Prodigal-EKS/assets/48749887/68e18a71-9f70-488e-926a-446dda479b2e)
+![BBBBB](https://github.com/14Rahul/Prodigal-EKS/assets/48749887/4e4d3155-c905-4417-8035-cd7956a30201)
+
