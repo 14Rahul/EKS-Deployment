@@ -24,3 +24,7 @@
 - Use AWS Gaurd Duty to monitor VPC flow logs.
 - Implement EKS namespaces and ACLs (Access Control Lists) to restrict access within the cluster.
 - Use secret and config maps for securely storing sensitive data and configurations.
+
+## Architecture
+
+![BBBBB](https://github.com/14Rahul/Prodigal-EKS/assets/48749887/68e18a71-9f70-488e-926a-446dda479b2e)
