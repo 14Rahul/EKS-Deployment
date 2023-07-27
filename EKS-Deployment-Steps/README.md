@@ -32,14 +32,14 @@ Chanege Cluster Name in Cluster Autoscaler Policy JSON file and create policy
 - aws iam create-policy --policy-name ClusterAutoscalerPolicy --policy-document file://policy.json
 
 Set OIDC Provider for CLuster
-- eksctl utils associate-iam-oidc-provider --cluster <Cluster Name> --approve
+- eksctl utils associate-iam-oidc-provider --cluster <Cluster> --approve
 
 Create Service Account for Cluster Autoscaler and attach policy 
-- eksctl create iamserviceaccount --cluster=<Cluster Name>   --namespace=kube-system --name=cluster-autoscaler --attach-policy-arn=arn:aws:iam::<Account ID>:policy/ClusterAutoscalerPolicy --override-existing-serviceaccounts --approve
+- eksctl create iamserviceaccount --cluster=<Cluster>   --namespace=kube-system --name=cluster-autoscaler --attach-policy-arn=arn:aws:iam::<Account ID>:policy/ClusterAutoscalerPolicy --override-existing-serviceaccounts --approve
 
 Add below Tags to Cluster Autiscaling Group for Auto Descoveru of Autoscaling Group
 - k8s.io/cluster-autoscaler/enabled=true
-- k8s.io/cluster-autoscaler/<Cluster Name>=owned
+- k8s.io/cluster-autoscaler/<Cluster>=owned
 
 Update Cluster Version and Cluster Name in YML file and Deploy the Cluster Autoscaler To Custer
 - kubectl apply -f cluster-autoscaler-autodiscover.yaml
@@ -68,7 +68,7 @@ Create IAM Policy for Ingress ALB Controller
 - aws iam create-policy --policy-name AWSLoadBalancerControllerIAMPolicy --policy-document file://iam_policy.json
 
 Create Service Account and attach policy AWSLoadBalancerControllerIAMPolicy
-- eksctl create iamserviceaccount --cluster=<Cluster Name> --namespace=kube-system     --name=aws-load-balancer-controller --role-name AmazonEKSLoadBalancerControllerRole     --attach-policy-arn="arn:aws:iam::<Account ID>:policy/AWSLoadBalancerControllerIAMPolicy"     --override-existing-serviceaccounts --approve
+- eksctl create iamserviceaccount --cluster=<Cluster> --namespace=kube-system     --name=aws-load-balancer-controller --role-name AmazonEKSLoadBalancerControllerRole     --attach-policy-arn="arn:aws:iam::<Account ID>:policy/AWSLoadBalancerControllerIAMPolicy"     --override-existing-serviceaccounts --approve
 
 Update Helm Repos
 - helm repo add eks https://aws.github.io/eks-charts
