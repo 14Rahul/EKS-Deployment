@@ -1,9 +1,8 @@
-# DevOps Assignment- EKS
+# DevOps EKS
 
-## Deliverables
+## Architecture
 
-**A highly available and scalable containerized "Hello World" application deployed on Amazon EKS accessible from the internet through an Application Load Balancer. The application is configured to autoscale based on CPU utilisation(70% CPU). Below is the Link.**
--  http://k8s-hellowor-ingress-db08b070a4-1429673963.us-east-2.elb.amazonaws.com/
+![BBBBB](https://github.com/14Rahul/Prodigal-EKS/assets/48749887/4e4d3155-c905-4417-8035-cd7956a30201)
 
 **Suggestions to make application cost-effective.**
 - Use AWS Farget serverless cluster deployment option.
@@ -25,7 +24,5 @@
 - Implement EKS namespaces and ACLs (Access Control Lists) to restrict access within the cluster.
 - Use secret and config maps for securely storing sensitive data and configurations.
 
-## Architecture
 
-![BBBBB](https://github.com/14Rahul/Prodigal-EKS/assets/48749887/4e4d3155-c905-4417-8035-cd7956a30201)
 
