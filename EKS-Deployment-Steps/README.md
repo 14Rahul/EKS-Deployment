@@ -29,7 +29,7 @@ Configure kubectl to connect to EKS Cluster on AWS
 ## Enable Cluster Nodes Autoscaler
 
 Chanege Cluster Name in Cluster Autoscaler Policy JSON file and create policy
-- aws iam create-policy --policy-name ClusterAutoscalerPolicy --policy-document file://policy.json
+- aws iam create-policy --policy-name ClusterAutoscalerPolicy --policy-document file://ClusterAutoscalerPolicy.json
 
 Set OIDC Provider for CLuster
 - eksctl utils associate-iam-oidc-provider --cluster <Cluster> --approve
