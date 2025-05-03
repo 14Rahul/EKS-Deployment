@@ -15,7 +15,7 @@ Set Appropriate Region Using below command
 - aws configure
 
 To Create EKS using eksctl use below command
-- eksctl create cluster -f helloworldclustercreate.yml
+- eksctl create cluster -f helloworldclustercreate.yml # if nodes not getting registered then check auto assign public IP setting of subnets
 
 To Upgrade EKS using eksctl use below command
 - eksctl upgrade cluster -f helloworldclustercreate.yml --approve
