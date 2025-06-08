@@ -143,19 +143,19 @@ spec:
           failureThreshold: 3
           httpGet:
             path: /livez
-            port: https
+            port: metrics-port
             scheme: HTTPS
           periodSeconds: 10
         name: metrics-server
         ports:
         - containerPort: 4443
-          name: https
+          name: metrics-port
           protocol: TCP
         readinessProbe:
           failureThreshold: 3
           httpGet:
             path: /readyz
-            port: https
+            port: metrics-port
             scheme: HTTPS
           initialDelaySeconds: 20
           periodSeconds: 10
